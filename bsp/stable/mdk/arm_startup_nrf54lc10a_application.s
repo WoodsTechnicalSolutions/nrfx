@@ -73,7 +73,7 @@ __Vectors       DCD     __initial_sp              ; Top of Stack
                 DCD     MemoryManagement_Handler
                 DCD     BusFault_Handler
                 DCD     UsageFault_Handler
-                DCD     0                         ; Reserved
+                DCD     SecureFault_Handler
                 DCD     0                         ; Reserved
                 DCD     0                         ; Reserved
                 DCD     0                         ; Reserved
@@ -401,6 +401,11 @@ BusFault_Handler\
 UsageFault_Handler\
                 PROC
                 EXPORT  UsageFault_Handler        [WEAK]
+                B       .
+                ENDP
+SecureFault_Handler\
+                PROC
+                EXPORT  SecureFault_Handler       [WEAK]
                 B       .
                 ENDP
 SVC_Handler     PROC

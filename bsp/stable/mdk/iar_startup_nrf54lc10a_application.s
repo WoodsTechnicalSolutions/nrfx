@@ -74,7 +74,7 @@ __vector_table
         DCD     MemoryManagement_Handler
         DCD     BusFault_Handler
         DCD     UsageFault_Handler
-        DCD     0                         ; Reserved
+        DCD     SecureFault_Handler
         DCD     0                         ; Reserved
         DCD     0                         ; Reserved
         DCD     0                         ; Reserved
@@ -400,6 +400,11 @@ BusFault_Handler
         PUBWEAK UsageFault_Handler
         SECTION .text:CODE:REORDER:NOROOT(1)
 UsageFault_Handler
+        B .
+
+        PUBWEAK SecureFault_Handler
+        SECTION .text:CODE:REORDER:NOROOT(1)
+SecureFault_Handler
         B .
 
         PUBWEAK SVC_Handler

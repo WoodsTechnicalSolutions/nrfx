@@ -428,7 +428,7 @@ __vector_table
         DCD     0                         ; Reserved
         DCD     0                         ; Reserved
         DCD     0                         ; Reserved
-        DCD     0                         ; Reserved
+        DCD     AUDIOPLL_IRQHandler
         DCD     0                         ; Reserved
         DCD     0                         ; Reserved
         DCD     0                         ; Reserved
@@ -832,6 +832,11 @@ WDT132_IRQHandler
         PUBWEAK  EGU130_IRQHandler
         SECTION .text:CODE:REORDER:NOROOT(1)
 EGU130_IRQHandler
+        B .
+
+        PUBWEAK  AUDIOPLL_IRQHandler
+        SECTION .text:CODE:REORDER:NOROOT(1)
+AUDIOPLL_IRQHandler
         B .
 
         PUBWEAK  SAADC_IRQHandler

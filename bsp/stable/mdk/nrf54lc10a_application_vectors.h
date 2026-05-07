@@ -63,6 +63,11 @@ __WEAK void UsageFault_Handler(void)
     while(1);
 }
 
+__WEAK void SecureFault_Handler(void)
+{
+    while(1);
+}
+
 __WEAK void SVC_Handler(void)
 {
     while(1);
@@ -149,7 +154,7 @@ __VECTOR_TABLE_ATTRIBUTE const VECTOR_TABLE_Type __VECTOR_TABLE[] = {
     MemoryManagement_Handler,
     BusFault_Handler,
     UsageFault_Handler,
-    0,
+    SecureFault_Handler,
     0,
     0,
     0,

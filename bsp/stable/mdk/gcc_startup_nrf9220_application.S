@@ -433,7 +433,7 @@ __isr_vector:
     .long   0                           /*Reserved */
     .long   0                           /*Reserved */
     .long   0                           /*Reserved */
-    .long   0                           /*Reserved */
+    .long   AUDIOPLL_IRQHandler
     .long   0                           /*Reserved */
     .long   0                           /*Reserved */
     .long   0                           /*Reserved */
@@ -827,6 +827,7 @@ Default_Handler:
     IRQ  WDT131_IRQHandler
     IRQ  WDT132_IRQHandler
     IRQ  EGU130_IRQHandler
+    IRQ  AUDIOPLL_IRQHandler
     IRQ  SAADC_IRQHandler
     IRQ  TEMP_IRQHandler
     IRQ  NFCT_IRQHandler

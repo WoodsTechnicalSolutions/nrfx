@@ -427,7 +427,7 @@ __Vectors       DCD     __initial_sp              ; Top of Stack
                 DCD     0                         ; Reserved
                 DCD     0                         ; Reserved
                 DCD     0                         ; Reserved
-                DCD     0                         ; Reserved
+                DCD     AUDIOPLL_IRQHandler
                 DCD     0                         ; Reserved
                 DCD     0                         ; Reserved
                 DCD     0                         ; Reserved
@@ -676,6 +676,7 @@ Default_Handler PROC
                 EXPORT   WDT131_IRQHandler [WEAK]
                 EXPORT   WDT132_IRQHandler [WEAK]
                 EXPORT   EGU130_IRQHandler [WEAK]
+                EXPORT   AUDIOPLL_IRQHandler [WEAK]
                 EXPORT   SAADC_IRQHandler [WEAK]
                 EXPORT   TEMP_IRQHandler [WEAK]
                 EXPORT   NFCT_IRQHandler [WEAK]
@@ -733,6 +734,7 @@ RTC130_IRQHandler
 WDT131_IRQHandler
 WDT132_IRQHandler
 EGU130_IRQHandler
+AUDIOPLL_IRQHandler
 SAADC_IRQHandler
 TEMP_IRQHandler
 NFCT_IRQHandler

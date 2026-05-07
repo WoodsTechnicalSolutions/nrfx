@@ -128,6 +128,7 @@ __WEAK void SysTick_Handler(void)
  __HANDLER("Default_Handler") void WDT131_IRQHandler                                           (void);
  __HANDLER("Default_Handler") void WDT132_IRQHandler                                           (void);
  __HANDLER("Default_Handler") void EGU130_IRQHandler                                           (void);
+ __HANDLER("Default_Handler") void AUDIOPLL_IRQHandler                                         (void);
  __HANDLER("Default_Handler") void SAADC_IRQHandler                                            (void);
  __HANDLER("Default_Handler") void TEMP_IRQHandler                                             (void);
  __HANDLER("Default_Handler") void NFCT_IRQHandler                                             (void);
@@ -518,7 +519,7 @@ __VECTOR_TABLE_ATTRIBUTE const VECTOR_TABLE_Type __VECTOR_TABLE[] = {
     0,
     0,
     0,
-    0,
+    AUDIOPLL_IRQHandler,
     0,
     0,
     0,

@@ -144,7 +144,7 @@ _vectors:
   EXC_HANDLER   MemoryManagement_Handler
   EXC_HANDLER   BusFault_Handler
   EXC_HANDLER   UsageFault_Handler
-  ISR_RESERVED                           /* Reserved */
+  EXC_HANDLER   SecureFault_Handler
   ISR_RESERVED                           /* Reserved */
   ISR_RESERVED                           /* Reserved */
   ISR_RESERVED                           /* Reserved */

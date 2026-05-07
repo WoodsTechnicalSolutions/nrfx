@@ -79,7 +79,7 @@ __isr_vector:
     .long   MemoryManagement_Handler
     .long   BusFault_Handler
     .long   UsageFault_Handler
-    .long   0                           /*Reserved */
+    .long   SecureFault_Handler
     .long   0                           /*Reserved */
     .long   0                           /*Reserved */
     .long   0                           /*Reserved */
@@ -529,6 +529,13 @@ BusFault_Handler:
 UsageFault_Handler:
     b       .
     .size   UsageFault_Handler, . - UsageFault_Handler
+
+
+    .weak   SecureFault_Handler
+    .type   SecureFault_Handler, %function
+SecureFault_Handler:
+    b       .
+    .size   SecureFault_Handler, . - SecureFault_Handler
 
 
     .weak   SVC_Handler
